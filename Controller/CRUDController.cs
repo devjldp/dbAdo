@@ -61,5 +61,24 @@ namespace DbAdo.Controller
             _connection.Close();
         }
 
+
+        // Delete record
+        public void DeleteBook(int id)
+        {
+            _connection.Open();
+
+            string query = "DELETE FROM books WHERE id = @id";
+
+            using(var cmd = new NpgsqlCommand(query, _connection))
+            {
+                cmd.Parameters.AddWithValue("id",id);
+
+                cmd.ExecuteNonQuery();
+            }
+            Console.WriteLine($"Book with ID: {id} has been removed");
+            _connection.Close();
+        
+        }
+
     }
 }
