@@ -15,7 +15,7 @@ namespace DbAdo.data
         {
             // Load configuration from appsettings.json
             var config = new ConfigurationBuilder().SetBasePath(Directory.GetCurrentDirectory())
-            .AddJsonFile("appsetting.json", optional: false, reloadOnChange: true).Build();
+            .AddJsonFile("appsettings.json", optional: false, reloadOnChange: true).Build();
             
             _connectionString = config.GetConnectionString("DefaultConnection");
         }
