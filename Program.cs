@@ -42,6 +42,14 @@ namespace DbAdo{
                     case "2":
                         crud.GetBooks();
                         break;
+                    case "3":
+                        Console.Write("Enter book's id you want to remove: ");
+                        int id = int.Parse(Console.ReadLine());
+                        crud.DeleteBook(id);
+                        break;
+                    default:
+                        Console.WriteLine("Option not valid");
+                        break;
                 }
                 
                 userOption = Menu();
